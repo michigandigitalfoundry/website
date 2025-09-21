@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Michigan Digital Foundry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --color-bg: #050505;
+            --color-primary: #FF8C00; /* Dark Orange */
+            --color-secondary: #FFD700; /* Gold/Amber */
+            --color-text: #F5F5F5;
+            --color-text-muted: #A1A1AA;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+        }
+        .font-heavy { font-weight: 900; }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 5s ease infinite;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .content-container {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+            background-size: 200% 200%;
+            animation: gradient-animation 5s ease infinite;
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.5);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 140, 0, 0.8);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card {
+            background-color: #111111;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <div id="particles-js"></div>
+    <div class="content-container">
+
+        <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="index.html">
+                    <img src="website-logo.png" alt="Michigan Digital Foundry Logo" class="h-8 w-auto">
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="services.html" class="text-amber-300 transition-colors">Services</a>
+                    <a href="index.html#work" class="hover:text-amber-300 transition-colors text-gray-300">Work</a>
+                    <a href="index.html#process" class="hover:text-amber-300 transition-colors text-gray-300">Process</a>
+                    <a href="index.html#booking" class="bg-white text-gray-900 py-2 px-5 rounded-md font-semibold hover:opacity-90 transition-opacity">Book Strategy Call</a>
+                </nav>
+                <button id="open-menu-btn" class="md:hidden text-2xl text-gray-300 hover:text-white">☰</button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-lg z-40 hidden flex items-center justify-center">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-4xl text-gray-400 hover:text-white">&times;</button>
+            <nav class="flex flex-col items-center space-y-8 text-2xl font-semibold">
+                <a href="services.html" class="hover:text-amber-300 transition-colors text-gray-300">Services</a>
+                <a href="index.html#work" class="hover:text-amber-300 transition-colors text-gray-300">Work</a>
+                <a href="index.html#process" class="hover:text-amber-300 transition-colors text-gray-300">Process</a>
+                <a href="contact.html" class="hover:text-amber-300 transition-colors text-gray-300">Contact</a>
+                <a href="index.html#booking" class="bg-white text-gray-900 py-3 px-8 rounded-md font-semibold hover:opacity-90 transition-opacity mt-4">Book Strategy Call</a>
+            </nav>
+        </div>
+
+        <main>
+            <section class="py-24 md:py-32 text-center aurora-bg">
+                <div class="max-w-4xl mx-auto px-6">
+                    <h1 class="text-5xl md:text-7xl font-heavy mb-4 tracking-tighter scroll-reveal">
+                        Our Digital <span class="gradient-text">Solutions</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto scroll-reveal" style="transition-delay: 100ms;">
+                        Custom-forged solutions engineered to solve your biggest growth challenges and transform your business's digital presence.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-24 px-4">
+                <div class="container mx-auto max-w-7xl">
+                    <!-- E-commerce Service -->
+                    <div class="grid md:grid-cols-2 gap-16 items-center mb-24 scroll-reveal">
+                        <div>
+                            <img src="https://placehold.co/600x450/111111/FF8C00?text=E-commerce" alt="E-commerce Storefront" class="rounded-xl shadow-lg">
+                        </div>
+                        <div class="text-left">
+                            <i data-lucide="shopping-cart" class="w-12 h-12 mb-4" style="color: var(--color-primary);"></i>
+                            <h2 class="text-4xl font-heavy mb-4">E-commerce Storefronts</h2>
+                            <p class="text-lg text-text-muted mb-6">Go beyond a simple online shop. We build high-performance, conversion-optimized e-commerce engines that turn your products into profit. We handle everything from stunning design to secure payment integration, creating a seamless shopping experience that builds customer loyalty.</p>
+                            <ul class="space-y-2 text-text-muted">
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Custom Shopify/WooCommerce Development</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>High-Conversion Product Pages</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Mobile-First Responsive Design</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Secure Payment Gateway Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Booking Systems Service -->
+                    <div class="grid md:grid-cols-2 gap-16 items-center mb-24 scroll-reveal">
+                        <div class="text-left md:order-2">
+                             <i data-lucide="calendar-check" class="w-12 h-12 mb-4" style="color: var(--color-primary);"></i>
+                            <h2 class="text-4xl font-heavy mb-4">Appointment & Booking Systems</h2>
+                            <p class="text-lg text-text-muted mb-6">Reclaim your time and eliminate phone tag. We develop automated scheduling systems that empower your clients to book appointments, services, or consultations 24/7. Our systems integrate with your calendar, handle payments, and send automated reminders to reduce no-shows.</p>
+                            <ul class="space-y-2 text-text-muted">
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Seamless Calendly/Acuity Integration</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Automated Email & SMS Reminders</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Online Deposit & Payment Collection</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Team Member & Service Scheduling</li>
+                            </ul>
+                        </div>
+                        <div class="md:order-1">
+                            <img src="https://placehold.co/600x450/111111/FFD700?text=Booking" alt="Booking System" class="rounded-xl shadow-lg">
+                        </div>
+                    </div>
+
+                    <!-- Management & Marketing Service -->
+                    <div class="grid md:grid-cols-2 gap-16 items-center scroll-reveal">
+                        <div>
+                             <img src="https://placehold.co/600x450/111111/FF8C00?text=Marketing" alt="Digital Marketing" class="rounded-xl shadow-lg">
+                        </div>
+                        <div class="text-left">
+                            <i data-lucide="bar-chart-3" class="w-12 h-12 mb-4" style="color: var(--color-primary);"></i>
+                            <h2 class="text-4xl font-heavy mb-4">Management & Marketing</h2>
+                            <p class="text-lg text-text-muted mb-6">A powerful website is just the beginning. Our retainer and marketing services ensure your digital asset continues to grow and attract new customers. From technical maintenance to targeted ad campaigns, we are your ongoing growth partner.</p>
+                             <ul class="space-y-2 text-text-muted">
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Monthly Website Maintenance & Security</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Search Engine Optimization (SEO)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Paid Ad Campaigns (Google & Social)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-green-500"></i>Performance Reporting & Analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="booking-cta" class="py-24 px-4 bg-black">
+                 <div class="container mx-auto text-center max-w-3xl">
+                    <h3 class="text-4xl md:text-5xl font-bold mb-4 scroll-reveal">Ready to Forge Your Solution?</h3>
+                    <p class="text-lg text-gray-400 mb-8 scroll-reveal" style="transition-delay: 100ms;">Book a complimentary strategy call. We'll audit your brand and deliver a custom growth roadmap you can implement immediately.</p>
+                    <div class="scroll-reveal" style="transition-delay: 200ms;">
+                        <a href="index.html#booking" class="text-black py-4 px-10 rounded-lg text-lg font-bold cta-button inline-block">
+                            Book Your Free Strategy Call
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-8 px-4 border-t border-white/10">
+            <div class="container mx-auto text-center text-gray-500">
+                 <p class="text-2xl font-bold tracking-wider gradient-text">MichiganDigitalFoundry</p>
+                <p class="text-sm mt-2">Forging Michigan's Digital Future from Warren, MI.</p>
+                <div class="mt-4 text-sm space-x-6">
+                    <a href="services.html" class="hover:text-amber-300 transition-colors">Services</a>
+                    <a href="terms.html" class="hover:text-amber-300 transition-colors">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-amber-300 transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-amber-300 transition-colors">Contact</a>
+                </div>
+                <p class="text-xs mt-4">&copy; <span id="year"></span> Michigan Digital Foundry. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        lucide.createIcons();
+        
+        particlesJS('particles-js', {"particles":{"number":{"value":50,"density":{"enable":true,"value_area":800}},"color":{"value":"#FF8C00"},"shape":{"type":"circle"},"opacity":{"value":0.4,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0.05,"sync":false}},"size":{"value":2.5,"random":true},"line_linked":{"enable":false},"move":{"enable":true,"speed":1.5,"direction":"none","random":true,"straight":false,"out_mode":"out"}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"}},"modes":{"repulse":{"distance":100,"duration":0.4}}},"retina_detect":true});
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        
+        // --- Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openMenuBtn = document.getElementById('open-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        openMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
